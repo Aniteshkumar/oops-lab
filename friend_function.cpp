@@ -4,22 +4,35 @@ using namespace std;
 class sample2;
 class sample1
 {
-    int a=879;
+    int a = 74;
 
 public:
-    friend int add(sample1 obj1, sample2 obj2);
+    friend int max(sample1 obj1, sample2 obj2);
 };
 
 class sample2
 {
-    int b=58;
+    int b = 58;
 
 public:
-    friend int add(sample1, sample2);
+    friend int max(sample1 obj1, sample2 obj2);
 };
-int add(sample1 obj1, sample2 obj2)
+int max(sample1 obj1, sample2 obj2)
 {
-    return (obj1.a + obj2.b);
+    if (obj1.a > obj2.b)
+    {
+        cout << "obj1 is greater!!";
+    }
+
+    else if (obj1.a < obj2.b)
+    {
+        cout << "obj2 is greater!!";
+    }
+
+    else
+    {
+        cout << "both are equal!!!";
+    }
 }
 
 int main()
@@ -27,6 +40,6 @@ int main()
     sample1 ex1;
     sample2 ex2;
 
-    cout<<add(ex1,ex2);
+    max(ex1, ex2);
     return 0;
 }
